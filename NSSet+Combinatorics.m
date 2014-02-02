@@ -2,11 +2,11 @@
 
 @implementation NSSet (Combinatorics)
 
-- (NSSet*) permutations {
+- (NSSet *) permutations {
 	return [self variationsOfSize:[self count]];
 }
 
-- (NSSet*) variationsOfSize:(NSUInteger)size {
+- (NSSet *) variationsOfSize:(NSUInteger)size {
 	NSMutableSet* retVal = [[[NSMutableSet alloc] init] autorelease];
 
 	if (size == 0) return [NSSet setWithObjects:[NSMutableArray array],nil];
@@ -35,7 +35,7 @@
 	return retVal;
 }
 
-- (NSSet*) variationsWithRepetitionsOfSize:(NSUInteger)size {
+- (NSSet *) variationsWithRepetitionsOfSize:(NSUInteger)size {
 	NSMutableSet* retVal = [[[NSMutableSet alloc] init] autorelease];
 	
 	if (size == 0) return [NSSet setWithObjects:[NSMutableArray array],nil];
@@ -89,7 +89,7 @@
 	return retVal;
 }
 
-- (NSSet*) combinationsWithRepetitionsOfSize:(NSUInteger)size {
+- (NSSet *) combinationsWithRepetitionsOfSize:(NSUInteger)size {
 	if (size == 0) return [NSSet setWithObjects:[NSCountedSet set],nil];
 	if ([self count] == 0) return self;
 	
@@ -115,7 +115,7 @@
 	return retVal;
 }
 
-- (NSString *)toString
+- (NSString *)description
 {
 	NSString *elems = [[self allObjects] componentsJoinedByString:@", "];
 	return [NSString stringWithFormat:@"{%@}", elems];

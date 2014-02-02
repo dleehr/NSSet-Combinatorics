@@ -4,15 +4,18 @@
 int main(int argc, char *argv[])
 {
 	NSMutableSet *set = [[NSMutableSet alloc] init];
-	[set addObject:@1];
-	[set addObject:@1];
-	[set addObject:@2];
-	[set addObject:@3];
+
+	for (int i = 0; i < 7; ++i)
+	{
+		[set addObject:[NSNumber numberWithInt:i]];
+	}
 
 	// demote NSString* to a const char * (C-strings for us common folk)
-	const char *setStr = [[set toString] cStringUsingEncoding:[NSString defaultCStringEncoding]];
+	const char *setStr = [[set description] cStringUsingEncoding:[NSString defaultCStringEncoding]];
+	const char *prmStr = [[[set permutations] description] cStringUsingEncoding:[NSString defaultCStringEncoding]];
 
 	printf("%s\n", setStr);
+	printf("%s\n", prmStr);
 
 	return 0;
 }

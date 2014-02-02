@@ -10,7 +10,7 @@
 - (NSSet*) combinationsOfSize:(NSUInteger)size;
 - (NSSet*) combinationsWithRepetitionsOfSize:(NSUInteger)size;
 
-- (NSString *) toString;
+- (NSString *) description;
 - (NSSet*) powerSet;
 
 @end
