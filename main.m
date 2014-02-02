@@ -1,21 +1,20 @@
 #import <Foundation/Foundation.h>
 #import "NSSet+Combinatorics.h"
 
+#define cstr(ns_str) [ns_str cStringUsingEncoding:[NSString defaultCStringEncoding]]
+#define desc(ns_obj) cstr([ns_obj description])
+
 int main(int argc, char *argv[])
 {
 	NSMutableSet *set = [[NSMutableSet alloc] init];
 
-	for (int i = 0; i < 7; ++i)
+	for (int i = 0; i < 4; ++i)
 	{
 		[set addObject:[NSNumber numberWithInt:i]];
 	}
 
-	// demote NSString* to a const char * (C-strings for us common folk)
-	const char *setStr = [[set description] cStringUsingEncoding:[NSString defaultCStringEncoding]];
-	const char *prmStr = [[[set permutations] description] cStringUsingEncoding:[NSString defaultCStringEncoding]];
-
-	printf("%s\n", setStr);
-	printf("%s\n", prmStr);
+	printf("%s\n", desc(set));
+	printf("%s\n", desc([set permutations]));
 
 	return 0;
 }
