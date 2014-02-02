@@ -115,4 +115,14 @@
 	return retVal;
 }
 
+- (NSString *)toString
+{
+	return @"{}";
+}
+
+- (NSSet *)powerSet
+{
+	return self;
+}
+
 @end

@@ -12,6 +12,9 @@ Methods added (self-explanatory):
 - (NSSet*) combinationsOfSize:(NSUInteger)size;
 - (NSSet*) combinationsWithRepetitionsOfSize:(NSUInteger)size;
 
+- (NSString *) toString;
+- (NSSet*) powerSet;
+
 Permutations and variations return a new set composed by NSArray objects (because order matters), while combinations return a NSSet composed by NSMutableSet (order doesn't matter here), and combinations with repetitions returns NSCountedSet-filled NSSet (so elements can be repeated).
 
 Still pretty optimizable, I think.
