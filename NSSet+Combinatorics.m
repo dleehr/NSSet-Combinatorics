@@ -117,7 +117,8 @@
 
 - (NSString *)toString
 {
-	return @"{}";
+	NSString *elems = [[self allObjects] componentsJoinedByString:@", "];
+	return [NSString stringWithFormat:@"{%@}", elems];
 }
 
 - (NSSet *)powerSet
