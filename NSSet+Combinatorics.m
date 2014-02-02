@@ -123,7 +123,15 @@
 
 - (NSSet *)powerSet
 {
-	return self;
+	NSMutableSet *ps = [[NSMutableSet alloc] init];
+	int cardinality = [self count];
+	for (int i = 0; i < cardinality; ++i)
+	{
+		for(NSSet *subset in [self variationsOfSize:i]) {
+			[ps addObject:subset];
+		}
+	}
+	return ps;
 }
 
 @end

@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	}
 
 	printf("%s\n", desc(set));
-	printf("%s\n", desc([set permutations]));
+	printf("%s\n", desc([set powerSet]));
 
 	return 0;
 }
